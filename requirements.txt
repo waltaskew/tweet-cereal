@@ -1,3 +1,4 @@
 oauthlib==2.0.1
 requests==2.12.4
 requests-oauthlib==0.7.0
+parsec==3.3
