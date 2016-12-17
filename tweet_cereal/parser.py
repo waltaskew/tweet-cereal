@@ -28,6 +28,7 @@ newch_parser = skip_whitespace(parsec.string('#newch'))
 commands = '#newch|#par|#break'
 text_parser = parsec.regex('(?!(%s))(.+?)(?=%s|$)' % (commands, commands))
 
+
 @parsec.Parser
 def text_command(text, index):
     """Parse a text command returning the text to be inserted."""
@@ -36,6 +37,7 @@ def text_command(text, index):
         return res
     else:
         return parsec.Value.success(res.index, Text(res.value.strip()))
+
 
 @parsec.Parser
 def newch_command(text, index):
